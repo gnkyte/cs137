@@ -6,7 +6,7 @@
        <!-- hover, active, linked, visited
             Use ID if using it once at a page
             Use classes if using it multiple times a page
-            
+
             #namebox {
             }
 
@@ -14,26 +14,26 @@
             }
         -->
         <script type="text/javascript">
-            
-            
+
+
             function submitThis()
             {
                 // var k = document.formThing.firstname.value;
-                
+
                 var p = document.getElementById('name').value;
                 var q = document.getElementById('subject').value;
-                
+
                 window.open('mailto:test@example.com?subject=' + q + '&body=' + p);
             }
         </script>
     </head>
     <body>
-        <form name="formThing" action="index.xhtml" method="POST">
+        <form name="formThing" action="index.html" method="POST">
             <input id="name" type="text" name="firstName" value="Name" required /><br />
             <input id="subject" type="text" name="subject" value="SUBJECT" required /><br />
             <input type="submit" value="I will submit stuff" onclick="check();" />
         </form>
-        
+
         <!--
         <a href="index.html" target="_blank">Go to other index</a>
 
@@ -43,9 +43,9 @@
             ID: <input id="namebox" type="textbox" /><br />
             <input type="submit" value="I submit stuff" />
         </form>
-        
+
         <a href="mailto:jlingad@uci.edu/subject=blah&body=blahblah">Click me to open email</a>
-        
+
         <table>
             <tr>
                 <td>Column 1</td>
