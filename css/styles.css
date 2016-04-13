@@ -89,6 +89,16 @@ a:hover {
     text-align: center;
 }
 
+#slider {
+    margin: 0 auto;
+    padding: 0 auto; 
+}
+
+#slider a img {
+    max-height: 40rem;
+    width: 100%;
+}
+
 /*
 #menubar {
     list-style-type: none;
