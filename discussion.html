@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            // More geard towards testing programs
+            console.log("Hello World.");
+            
+            var x = 5;
+            console.log("X: " + x);
+            
+            console.log(document.getElementById("nameID").value)
+            
+            function doesSomething() {
+                alert("You are the 10,000th winner!");
+            }
+            
+            function doSomething() {
+                alert(document.theForm.firstName.value);
+                alert(document.getElementById("nameID").value);
+                
+                var name=document.getElementById("nameId").value;
+                if(name == "thomas")
+                    alert("You are Thomas.");
+                
+                var phoneNumber = document.getElementById("numberId").value;
+                if(phoneNumber.length > 10) {
+                    alert("This is not a real number!");
+                }
+                
+                alert(9 == "9");
+            }
+        </script>
+        
+        <form name="theForm" method="post" action="discussion.html">
+            Name<input id="nameID" type="text" name="firstName" value="discussion" required /><br />
+            Phone<input id="numberID" type="text" name="phoneNumber" value="" required /><br />
+            <input type="submit" onClick="doSomething();" />
+        </form>
+    </body>
+</html>
