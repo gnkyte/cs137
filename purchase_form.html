@@ -5,8 +5,6 @@
         <title> Billing Information </title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <script type="text/javascript">
-            
-            
             function submitForm()
             {
                 // var k = document.formThing.firstname.value;
@@ -24,25 +22,41 @@
         </script>
     </head>
     <body>
-        <div id="navbar-container" style="height: 40px; line-height: 50px;">
-            <h3 style="text-align: center; color: #003557;"> Enter Billing Information: </h3>
-            </div>
-        <form name="formThing" action="index.html" method="POST" style="text-align: center; color: #003557;">
-            Name <br>
-            <input id="name" type="text" name="firstName" value="" required /><br />
-            Street<br>
-            <input id="street" type="text" name="street" value="" required /><br />
-            City<br>
-            <input id="city" type="text" name="city" value="" required /><br />
-            State<br>
-            <input id="state" type="text" name="state" value="" required /><br />
-            Zip Code<br>
-            <input id="zip" type="text" name="zip" value="" required /><br />
-            Credit Card<br>
-            <input id="creditcard" type="text" name="creditcard" value="" required /><br />
-            CVC Code<br>
-            <input id="security" type="text" name="security" value="" required /><br />
-            <input type="submit" value="Submit" onclick="check();" />
-        </form>
+        <!-- navbar -->
+        <div id="navbar-container">
+            <nav class="main-navbar">
+                <ul id="menubar">
+                    <li class="navbar-logo"><a href="index.html"><img src="img/logo.png" alt="logo"/></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Men's Shoes</a></li>
+                    <li><a href="index.html">Women's Shoes</a></li>
+                </ul>
+                <ul id="menubar-right">
+                    <li><a href="index.html">Sign Up</a></li>
+                    <li><a href="index.html">Log In</a></li>
+                    <li class="active"><a href="index.html">Cart</a></li>
+                </ul>
+                <br />
+            </nav>
+        </div>
+        <!-- End navbar container -->      
+        <div>
+            <table class="subtitle">
+                <tr><td><h2>Checkout</h2></td></tr>
+            </table>
+        </div>
+        <div id="form-container">
+            <form id="billing-form" action="index.html" method="POST" style="text-align: center; color: #003557;">
+                <h3 style="text-align: center; color: #003557;"> Enter Billing Information: </h3>
+                    Name: <input id="name" size="50" type="text" name="firstName" value="" autofocus required /><br />
+                    Street: <input id="street" size="50" type="text" name="street" value="" required /><br />
+                    City: <input id="city" size="15" type="text" name="city" value="" required />
+                    State: <input id="state" size="3" type="text" name="state" value="" required />
+                    Zip Code: <input id="zip" size="6" type="text" name="zip" value="" required /><br />
+                    Credit Card: <input id="credit-card" size="20" type="text" name="credit-card" value="" required />
+                    CVC Code: <input id="security" size="4" type="text" name="security" value="" required /><br />
+                    <input type="submit" id="submit-button" value="Submit" onclick="check();" />
+            </form>
+        </div>
     </body>
 </html>
