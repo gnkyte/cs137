@@ -6,36 +6,48 @@
 
 <html>
     <head>
-        <title>INF124CS137 | Shoe Warehouse</title>
+        <title>The Secret Life of Shoes</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+        <script src="js/jquery.slide.js" type="text/javascript"></script>
+        <script src="js/jquery-func.js" type="text/javascript"></script>
     </head>
     <body>
-        <div id="navbar-container" style="height: 50px; line-height: 50px;">
+        <!-- navbar -->
+        <div id="navbar-container">
             <nav class="main-navbar">
-<!--                <a class="navbar-brand" href="index.html"><img class="header-logo" src="img/logo.png" height=50></a>-->
                 <ul id="menubar">
-                    <li><a href="index.html" >Home</a></li>
-                    <li><a href="mensShoes.html">Men's Shoes</a></li>
-                    <li  class="active"><a href="womensShoes.html">Women's Shoes</a></li>
-                    <li><a href="childrensShoes.html">Children's Shoes</a></li>
-                    <li>Sign Up</li>
-                    <li>Log In</li>
-                    <li>Shopping Cart</li>
+                    <li class="navbar-logo"><a href="index.html"><img src="img/logo.png" alt="logo"/></a></li>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Men's Shoes</a></li>
+                    <li><a href="index.html">Women's Shoes</a></li>
                 </ul>
+                <ul id="menubar-right">
+                    <li><a href="about.html">About Us</a></li>
+<!--
+                    <li><a href="index.html">Sign Up</a></li>
+                    <li><a href="index.html">Log In</a></li>
+                    <li><a href="index.html">Cart</a></li>
+-->
+                </ul>
+                <br />
             </nav>
         </div>
-        <div>
-            <table class="subtitle">
+        <!-- End navbar container -->           
+        <div class="descriptonPage">
+            <table>
                 <tr>
-                    <td><h2>Do we really sell shoes?</h2></td>
+                    <td>
+                        <img src="pictures/shoes4.jpg" alt="shoe4" width="400">
+                    </td>
+                    <td>
+                        <p class="shoePrice">$300
+                        </p>
+                        <p class="shoeDescription">Blue Dangerous Octopus Shoe Thing</p>
+                    </td>
                 </tr>
             </table>
-        </div>
-            <img src="Pictures/shoes4.jpg" alt="shoes4">
-            <p class="shoeDescription">Blue Octopus Dangerous High Heels</p>
-            <p class="shoeDescription"> $4</p>
-        <div>
-
         </div>
     </body>
 </html>
