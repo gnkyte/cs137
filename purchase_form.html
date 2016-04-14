@@ -5,10 +5,34 @@
         <title> Billing Information </title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <script type="text/javascript">
-            function submitForm()
+            function testStrings(s)
+            {
+                var matched = s.match(/\d+/g);
+                if(matched != null){
+                    alert('Entry should not contain a number!');
+                    return false;
+                }
+            }
+            /*function submitForm(form)
             {
                 // var k = document.formThing.firstname.value;
                 
+                var name = form.getElementById('name').value;
+                var street = form.getElementById('street').value;
+                var city = form.getElementById('city').value;
+                var state = form.getElementById('state').value;
+                var country = form.getElementById('country').value;
+                var zip = form.getElementById('zip').value;
+                var creditcard = form.getElementById('creditcard').value;
+                var security = form.getElementById('security').value;
+                var date =  form.getElementById('expiry').value;
+                var email = form.getElementById('email').value;
+                var shipping = form.getElementById('shipping').value;
+                window.open('mailto:' + email + '?subject='Order Confirmation'&body=stuff');
+            }
+            */
+            function checkForm()
+            {
                 var name = document.getElementById('name').value;
                 var street = document.getElementById('street').value;
                 var city = document.getElementById('city').value;
@@ -17,10 +41,21 @@
                 var zip = document.getElementById('zip').value;
                 var creditcard = document.getElementById('creditcard').value;
                 var security = document.getElementById('security').value;
+                var date =  document.getElementById('expiry').value;
                 var email = document.getElementById('email').value;
                 var shipping = document.getElementById('shipping').value;
-                window.open('mailto:test@example.com?subject=' + q + '&body=' + p);
+                if (testStrings(name) ==  false)
+                    return false;
+                if (testStrings(city) ==  false)
+                    return false;
+                if (testStrings(state) == false)
+                    return false;
+                if (testStrings(country) == false)
+                    return false;
+                window.open("mailto:" + email + "?subject=Order Confirmation&body=stuff");
+                return true;
             }
+
         </script>
     </head>
     <body>
@@ -48,7 +83,7 @@
             </table>
         </div>
         <div id="form-container">
-            <form id="billing-form" action="index.html" method="POST" style="text-align: center; color: #003557;">
+            <form id="billing-form" action="purchase_form.html" method="POST" onsubmit="return checkForm()" style="text-align: center; color: #003557;">
                 <h3 style="text-align: center; color: #003557;"> Enter Billing Information: </h3>
                     Name: <input id="name" size="50" type="text" name="firstName" value="" autofocus required /><br />
                     Street: <input id="street" size="50" type="text" name="street" value="" required /><br />
@@ -56,14 +91,15 @@
                     State: <input id="state" size="3" type="text" name="state" value="" required />
                     Country: <input id="country" size="15" type="text" name="country" value="" required/><br />
                     Zip Code: <input id="zip" size="6" type="number" name="zip" value="" required /><br />
-                    Credit Card: <input id="credit-card" size="20" type="number" name="credit-card" value="" required />
+                    Credit Card: <input id="creditcard" size="20" type="number" name="credit-card" value="" required />
                     CVC Code: <input id="security" size="4" type="number" name="security" value="" required /><br />
-                    Email: <input id="email" size="50" type="text" name="email" value="" required /><br />
+                    Expiration Date: <input id="expiry" size="10" type="date" name="expiry" value="" required /><br />
+                    Email: <input id="email" size="50" type="email" name="email" value="" required /><br />
                     Shipping Option: <select id="shipping" name="shipping">
                         <option value="standard">Standard Shipping: $4.00</option>
                         <option value="expedited">Expedited Shipping: $7.00</option>
                     </select><br><br>
-                    <input type="submit" id="submit-button" value="Submit" onclick="check();" />
+                    <input type="submit" id="submit-button" value="Submit" onclick="return checkForm()" />
             </form>
         </div>
     </body>
