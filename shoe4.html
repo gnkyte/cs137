@@ -21,6 +21,46 @@
                     return false;
                 }
             }
+
+            function checkCreditlength(n)
+            {
+                var len = n.toString().length;
+                console.log(len);
+                if ((len == 15) || (len == 16)){
+                    return true;
+                }
+                alert('Credit Card must have 15-16 digits.');
+                return false;
+            }
+            function checkZiplength(n)
+            {
+                var len = n.toString().length;
+                console.log(len);
+                if ((len == 5)){
+                    return true;
+                }
+                alert('Zip Code must have 5 digits.');
+                return false;
+            }
+            function checkCVClength(n)
+            {
+                var len = n.toString().length;
+                console.log(len);
+                if ((len == 3)){
+                    return true;
+                }
+                alert('CVC Code must have 3 digits.');
+                return false;
+            }
+            function checkStatelength(s)
+            {
+                var len = s.length;
+                if ((len ==2)){
+                    return true;
+                }
+                alert('State must have 2 letters.');
+                return false;
+            }
             /*function submitForm(form)
             {
                 // var k = document.formThing.firstname.value;
@@ -70,6 +110,11 @@
                 var shipping = document.getElementById('shipping').value;
                 var quantity = document.getElementById('quantity').value;
                 var size = document.getElementById('size').value;
+                var shipstreet = document.getElementById('shipstreet').value;
+                var shipcity = document.getElementById('shipcity').value;
+                var shipstate = document.getElementById('shipstate').value;
+                var shipcountry = document.getElementById('shipcountry').value;
+                var shipzip = document.getElementById('shipzip').value;
                 var line = escape("\n");
                 if (testStrings(name) ==  false)
                     return false;
@@ -79,7 +124,25 @@
                     return false;
                 if (testStrings(country) == false)
                     return false;
-                window.open("mailto:" + email + "?subject=Order Confirmation&body=Thank you for purchasing the Blue Dangerous Octopus Thing! Below are the details of your order: " + line + line + " Name:" + name + line + "Address: " + street + " " + city + " " + state + " " + country + " " + zip + line + "Credit Card Expiry: "+ date + line + "Shipping Type: " + shipType(shipping) + line + "Shoe Size: " + 
+                if (testStrings(shipcity) ==  false)
+                    return false;
+                if (testStrings(shipstate) == false)
+                    return false;
+                if (testStrings(shipcountry) == false)
+                    return false;
+                if (checkCreditlength(creditcard) == false)
+                    return false;
+                if (checkCVClength(security) == false)
+                    return false;
+                if (checkZiplength(zip) == false)
+                    return false;
+                if (checkZiplength(shipzip) == false)
+                    return false;
+                if (checkStatelength(state) == false)
+                    return false;  
+                 if (checkStatelength(shipstate) == false)
+                    return false;               
+                window.open("mailto:" + email + "?subject=Order Confirmation&body=Thank you for purchasing the Blue Dangerous Octopus Thing! Below are the details of your order: " + line + line + " Name: " + name + line + "Ship to this Address: " + shipstreet + " " + shipcity + " " + shipstate + " " + shipcountry + " " + shipzip + line + "Credit Card Expiry: "+ date + line + "Shipping Type: " + shipType(shipping) + line + "Shoe Size: " + 
                 	size + line + "Quantity: " + quantity + line + "Total Amount Paid: $" + totalCalculator(shipping, quantity) + line + line + "------------" + line + "We appreciate your business with us. If any problems should occur, please call (+1)650-757-7463" + line + line + "Best," + line + "The Secret Life of Shoes Team");
                 return true;
             }
@@ -160,6 +223,12 @@
                         <option value="7">Expedited Shipping: $7.00</option>
                         <option value="10">Overnight Shipping: $10.00</option>
                     </select><br><br>
+                <h3 style="text-align: center; color: #003557;"> Enter Shipping Information: </h3>
+                    Street: <input id="shipstreet" size="50" type="text" name="street" value="" required /><br />
+                    City: <input id="shipcity" size="15" type="text" name="city" value="" required />
+                    State: <input id="shipstate" size="3" type="text" name="state" value="" required />
+                    Country: <input id="shipcountry" size="15" type="text" name="country" value="" required/><br />
+                    Zip Code: <input id="shipzip" size="6" type="number" name="zip" value="" required /><br />
                     <input type="submit" id="submit-button" value="Submit" onclick="return checkForm()" />
             </form>
         </div>
