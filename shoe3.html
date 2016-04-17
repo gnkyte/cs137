@@ -6,36 +6,233 @@
 
 <html>
     <head>
-        <title>INF124CS137 | Shoe Warehouse</title>
+        <title>The Secret Life of Shoes</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+        <script src="js/jquery.slide.js" type="text/javascript"></script>
+        <script src="js/jquery-func.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            function testStrings(s)
+            {
+                var matched = s.match(/\d+/g);
+                if(matched != null){
+                    alert('Entry should not contain a number!');
+                    return false;
+                }
+            }
+
+            function checkCreditlength(n)
+            {
+                var len = n.toString().length;
+                console.log(len);
+                if ((len == 15) || (len == 16)){
+                    return true;
+                }
+                alert('Credit Card must have 15-16 digits.');
+                return false;
+            }
+            function checkZiplength(n)
+            {
+                var len = n.toString().length;
+                console.log(len);
+                if ((len == 5)){
+                    return true;
+                }
+                alert('Zip Code must have 5 digits.');
+                return false;
+            }
+            function checkCVClength(n)
+            {
+                var len = n.toString().length;
+                console.log(len);
+                if ((len == 3)){
+                    return true;
+                }
+                alert('CVC Code must have 3 digits.');
+                return false;
+            }
+            function checkStatelength(s)
+            {
+                var len = s.length;
+                if ((len ==2)){
+                    return true;
+                }
+                alert('State must have 2 letters.');
+                return false;
+            }
+            /*function submitForm(form)
+            {
+                // var k = document.formThing.firstname.value;
+                
+                var name = form.getElementById('name').value;
+                var street = form.getElementById('street').value;
+                var city = form.getElementById('city').value;
+                var state = form.getElementById('state').value;
+                var country = form.getElementById('country').value;
+                var zip = form.getElementById('zip').value;
+                var creditcard = form.getElementById('creditcard').value;
+                var security = form.getElementById('security').value;
+                var date =  form.getElementById('expiry').value;
+                var email = form.getElementById('email').value;
+                var shipping = form.getElementById('shipping').value;
+                window.open('mailto:' + email + '?subject='Order Confirmation'&body=stuff');
+            }
+            */
+            function shipType(s)
+            {
+                if(s == 4){
+                    return "Standard";
+                }
+                else if (s == 7){
+                    return "Expedited";
+                }
+                else if (s == 10){
+                    return "Overnight";
+                }
+            }
+            function totalCalculator(s, q)
+            {
+                return (300*parseInt(q))+parseInt(s, 10);
+            }
+            function checkForm()
+            {
+                var name = document.getElementById('name').value;
+                var street = document.getElementById('street').value;
+                var city = document.getElementById('city').value;
+                var state = document.getElementById('state').value;
+                var country = document.getElementById('country').value;
+                var zip = document.getElementById('zip').value;
+                var creditcard = document.getElementById('creditcard').value;
+                var security = document.getElementById('security').value;
+                var date =  document.getElementById('expiry').value;
+                var email = document.getElementById('email').value;
+                var shipping = document.getElementById('shipping').value;
+                var quantity = document.getElementById('quantity').value;
+                var size = document.getElementById('size').value;
+                var shipstreet = document.getElementById('shipstreet').value;
+                var shipcity = document.getElementById('shipcity').value;
+                var shipstate = document.getElementById('shipstate').value;
+                var shipcountry = document.getElementById('shipcountry').value;
+                var shipzip = document.getElementById('shipzip').value;
+                var line = escape("\n");
+                if (testStrings(name) ==  false)
+                    return false;
+                if (testStrings(city) ==  false)
+                    return false;
+                if (testStrings(state) == false)
+                    return false;
+                if (testStrings(country) == false)
+                    return false;
+                if (testStrings(shipcity) ==  false)
+                    return false;
+                if (testStrings(shipstate) == false)
+                    return false;
+                if (testStrings(shipcountry) == false)
+                    return false;
+                if (checkCreditlength(creditcard) == false)
+                    return false;
+                if (checkCVClength(security) == false)
+                    return false;
+                if (checkZiplength(zip) == false)
+                    return false;
+                if (checkZiplength(shipzip) == false)
+                    return false;
+                if (checkStatelength(state) == false)
+                    return false;  
+                 if (checkStatelength(shipstate) == false)
+                    return false;               
+                window.open("mailto:" + email + "?subject=Order Confirmation&body=Thank you for purchasing the Blue Dangerous Octopus Thing! Below are the details of your order: " + line + line + " Name: " + name + line + "Ship to this Address: " + shipstreet + " " + shipcity + " " + shipstate + " " + shipcountry + " " + shipzip + line + "Credit Card Expiry: "+ date + line + "Shipping Type: " + shipType(shipping) + line + "Shoe Size: " + 
+                    size + line + "Quantity: " + quantity + line + "Total Amount Paid: $" + totalCalculator(shipping, quantity) + line + line + "------------" + line + "We appreciate your business with us. If any problems should occur, please call (+1)650-757-7463" + line + line + "Best," + line + "The Secret Life of Shoes Team");
+                return true;
+            }
+        </script>
     </head>
     <body>
-        <div id="navbar-container" style="height: 50px; line-height: 50px;">
+        <!-- navbar -->
+        <div id="navbar-container">
             <nav class="main-navbar">
-<!--                <a class="navbar-brand" href="index.html"><img class="header-logo" src="img/logo.png" height=50></a>-->
                 <ul id="menubar">
-                    <li><a href="index.html" >Home</a></li>
-                    <li class="active"><a href="mensShoes.html">Men's Shoes</a></li>
-                    <li><a href="womensShoes.html">Women's Shoes</a></li>
-                    <li><a href="childrensShoes.html">Children's Shoes</a></li>
-                    <li>Sign Up</li>
-                    <li>Log In</li>
-                    <li>Shopping Cart</li>
+                    <li class="navbar-logo"><a href="index.html"><img src="img/logo.png" alt="logo"/></a></li>
+                    <li ><a href="index.html">Home</a></li>
+                    <li class="active"><a href="menshoes.html">Men's Shoes</a></li>
+                    <li><a href="womenshoes.html">Women's Shoes</a></li>
                 </ul>
+                <ul id="menubar-right">
+                    <li><a href="aboutMe.html">About Us</a></li>
+<!--
+                    <li><a href="index.html">Sign Up</a></li>
+                    <li><a href="index.html">Log In</a></li>
+                    <li><a href="index.html">Cart</a></li>
+-->
+                </ul>
+                <br />
             </nav>
         </div>
-        <div>
-            <table class="subtitle">
+        <!-- End navbar container -->           
+        <div id="shoe-description-container">
+            <table class="shoe">
                 <tr>
-                    <td><h2>Do we really sell shoes?</h2></td>
+                    <td>
+                        <img src="pictures/shoes3.jpg" alt="shoe3" width="400" style="margin: 10px">
+                    </td>
+                    <td>
+                        <p class="shoePrice">$27
+                        </p>
+                        <p class="shoeDescription">Black Dress Shoes
+                        <br><br>Pair these daring and dashing shoes with a pair of pants to really add style to any look! With the extra pointy toes, you are sure to poke a few eyes out. If you're lucky, maybe you'll catch a few eyes, too ;)
+                        <br><br>Material: leather? I think?</p>
+                    </td>
                 </tr>
             </table>
         </div>
-            <img src="/Pictures/shoes4.jpg" alt="shoes4">
-            <p class="shoeDescription">Black dress shoes</p>
-            <p class="shoeDescription"> $27/p>
-        <div>
-
+        <div id="form-container">
+            <form id="billing-form" action="shoe4.html" method="POST" onsubmit="return checkForm()" style="text-align: center; color: #003557;">
+                <h3 style="text-align: center; color: #003557;"> Select Quantity and Size: </h3>
+                Size: <select id="size" name="size">
+                        <option value="5">5</option>
+                        <option value="5.5">5.5</option>
+                        <option value="6">6</option>
+                        <option value="6.5">6.5</option>
+                        <option value="7">7</option>
+                        <option value="7.5">7.5</option>
+                        <option value="8">8</option>
+                        <option value="8.5">8.5</option>
+                        <option value="9">9</option>
+                        <option value="9.5">9.5</option>
+                        <option value="10">10</option>
+                    </select>
+                Quantity: <select id="quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select> 
+                <h3 style="text-align: center; color: #003557;"> Enter Billing Information: </h3>
+                    Name: <input id="name" size="50" type="text" name="firstName" value="" autofocus required /><br />
+                    Street: <input id="street" size="50" type="text" name="street" value="" required /><br />
+                    City: <input id="city" size="15" type="text" name="city" value="" required />
+                    State: <input id="state" size="3" type="text" name="state" value="" required />
+                    Country: <input id="country" size="15" type="text" name="country" value="" required/><br />
+                    Zip Code: <input id="zip" size="6" type="number" name="zip" value="" required /><br />
+                    Credit Card: <input id="creditcard" size="20" type="number" name="credit-card" value="" required />
+                    CVC Code: <input id="security" size="4" type="number" name="security" value="" required /><br />
+                    Expiration Date: <input id="expiry" size="10" type="date" name="expiry" value="" required /><br />
+                    Email: <input id="email" size="50" type="email" name="email" value="" required /><br />
+                    Shipping Option: <select id="shipping" name="shipping">
+                        <option value="4">Standard Shipping: $4.00</option>
+                        <option value="7">Expedited Shipping: $7.00</option>
+                        <option value="10">Overnight Shipping: $10.00</option>
+                    </select><br><br>
+                <h3 style="text-align: center; color: #003557;"> Enter Shipping Information: </h3>
+                    Street: <input id="shipstreet" size="50" type="text" name="street" value="" required /><br />
+                    City: <input id="shipcity" size="15" type="text" name="city" value="" required />
+                    State: <input id="shipstate" size="3" type="text" name="state" value="" required />
+                    Country: <input id="shipcountry" size="15" type="text" name="country" value="" required/><br />
+                    Zip Code: <input id="shipzip" size="6" type="number" name="zip" value="" required /><br />
+                    <input type="submit" id="submit-button" value="Submit" onclick="return checkForm()" />
+            </form>
         </div>
     </body>
 </html>

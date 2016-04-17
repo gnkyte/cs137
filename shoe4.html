@@ -81,19 +81,19 @@
             */
             function shipType(s)
             {
-            	if(s == 4){
-            		return "Standard";
-            	}
-            	else if (s == 7){
-            		return "Expedited";
-            	}
-            	else if (s == 10){
-            		return "Overnight";
-            	}
+                if(s == 4){
+                    return "Standard";
+                }
+                else if (s == 7){
+                    return "Expedited";
+                }
+                else if (s == 10){
+                    return "Overnight";
+                }
             }
             function totalCalculator(s, q)
             {
-            	return (300*parseInt(q))+parseInt(s, 10);
+                return (300*parseInt(q))+parseInt(s, 10);
             }
             function checkForm()
             {
@@ -143,7 +143,7 @@
                  if (checkStatelength(shipstate) == false)
                     return false;               
                 window.open("mailto:" + email + "?subject=Order Confirmation&body=Thank you for purchasing the Blue Dangerous Octopus Thing! Below are the details of your order: " + line + line + " Name: " + name + line + "Ship to this Address: " + shipstreet + " " + shipcity + " " + shipstate + " " + shipcountry + " " + shipzip + line + "Credit Card Expiry: "+ date + line + "Shipping Type: " + shipType(shipping) + line + "Shoe Size: " + 
-                	size + line + "Quantity: " + quantity + line + "Total Amount Paid: $" + totalCalculator(shipping, quantity) + line + line + "------------" + line + "We appreciate your business with us. If any problems should occur, please call (+1)650-757-7463" + line + line + "Best," + line + "The Secret Life of Shoes Team");
+                    size + line + "Quantity: " + quantity + line + "Total Amount Paid: $" + totalCalculator(shipping, quantity) + line + line + "------------" + line + "We appreciate your business with us. If any problems should occur, please call (+1)650-757-7463" + line + line + "Best," + line + "The Secret Life of Shoes Team");
                 return true;
             }
         </script>
@@ -154,9 +154,9 @@
             <nav class="main-navbar">
                 <ul id="menubar">
                     <li class="navbar-logo"><a href="index.html"><img src="img/logo.png" alt="logo"/></a></li>
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="index.html">Men's Shoes</a></li>
-                    <li><a href="index.html">Women's Shoes</a></li>
+                    <li ><a href="index.html">Home</a></li>
+                    <li><a href="menshoes.html">Men's Shoes</a></li>
+                    <li class="active"><a href="womenshoes.html">Women's Shoes</a></li>
                 </ul>
                 <ul id="menubar-right">
                     <li><a href="aboutMe.html">About Us</a></li>
@@ -174,20 +174,22 @@
             <table class="shoe">
                 <tr>
                     <td>
-                        <img src="pictures/shoes4.jpg" alt="shoe4" width="400">
+                        <img src="pictures/shoes4.jpg" alt="shoe4" width="400" style="margin: 10px">
                     </td>
                     <td>
                         <p class="shoePrice">$300
                         </p>
-                        <p class="shoeDescription">Blue Dangerous Octopus Shoe Thing</p>
+                        <p class="shoeDescription">Blue Dangerous Octopus Shoe Thing
+                        <br><br>These are clearly very designer avant-garde shoes that are clearly not some high school art's student AP Art project. Yeah... these are made in Italy. Hand-crafted by hands....
+                        <br><br>Materials: mystery! Wow! Such intrigue!</p>
                     </td>
                 </tr>
             </table>
         </div>
         <div id="form-container">
             <form id="billing-form" action="shoe4.html" method="POST" onsubmit="return checkForm()" style="text-align: center; color: #003557;">
-            	<h3 style="text-align: center; color: #003557;"> Select Quantity and Size: </h3>
-            	Size: <select id="size" name="size">
+                <h3 style="text-align: center; color: #003557;"> Select Quantity and Size: </h3>
+                Size: <select id="size" name="size">
                         <option value="5">5</option>
                         <option value="5.5">5.5</option>
                         <option value="6">6</option>
