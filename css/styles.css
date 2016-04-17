@@ -198,6 +198,48 @@ table.shoe {
 
 hr.separator {
     width: 40%;
+    margin-bottom: 1rem;
+}
+
+.product-img {
+    width: 200px;
+    height: 200px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.product-img:hover {
+    width: 400px;
+    height: 400px;
+}
+
+#product-index {
+    margin-top: 3rem;
+    color: #000;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #FFF;
+}
+
+#product-index a {
+    text-decoration: none;
+    color: #000;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+#product-index p {
+    padding-left: 3rem;
+}
+
+#womens-shoes-index h1 {
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+}
+
+#mens-shoes-index {
+    margin-top: 3rem;
 }
 
 
