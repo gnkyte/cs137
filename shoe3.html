@@ -93,7 +93,7 @@
             }
             function totalCalculator(s, q)
             {
-                return (300*parseInt(q))+parseInt(s, 10);
+                return (27*parseInt(q))+parseInt(s, 10);
             }
             function checkForm()
             {
@@ -142,7 +142,7 @@
                     return false;  
                  if (checkStatelength(shipstate) == false)
                     return false;               
-                window.open("mailto:" + email + "?subject=Order Confirmation&body=Thank you for purchasing the Blue Dangerous Octopus Thing! Below are the details of your order: " + line + line + " Name: " + name + line + "Ship to this Address: " + shipstreet + " " + shipcity + " " + shipstate + " " + shipcountry + " " + shipzip + line + "Credit Card Expiry: "+ date + line + "Shipping Type: " + shipType(shipping) + line + "Shoe Size: " + 
+                window.open("mailto:" + email + "?subject=Order Confirmation&body=Thank you for purchasing the Black Dress Shoes! Below are the details of your order: " + line + line + " Name: " + name + line + "Ship to this Address: " + shipstreet + " " + shipcity + " " + shipstate + " " + shipcountry + " " + shipzip + line + "Credit Card Expiry: "+ date + line + "Shipping Type: " + shipType(shipping) + line + "Shoe Size: " + 
                     size + line + "Quantity: " + quantity + line + "Total Amount Paid: $" + totalCalculator(shipping, quantity) + line + line + "------------" + line + "We appreciate your business with us. If any problems should occur, please call (+1)650-757-7463" + line + line + "Best," + line + "The Secret Life of Shoes Team");
                 return true;
             }
@@ -181,26 +181,27 @@
                         </p>
                         <p class="shoeDescription">Black Dress Shoes
                         <br><br>Pair these daring and dashing shoes with a pair of pants to really add style to any look! With the extra pointy toes, you are sure to poke a few eyes out. If you're lucky, maybe you'll catch a few eyes, too ;)
-                        <br><br>Material: leather? I think?</p>
+                        <br><br>Material: Leather upper, Faux Leather lining, Rubber outsole</p>
                     </td>
                 </tr>
             </table>
         </div>
         <div id="form-container">
-            <form id="billing-form" action="shoe4.html" method="POST" onsubmit="return checkForm()" style="text-align: center; color: #003557;">
+            <form id="billing-form" action="shoe3.html" method="POST" onsubmit="return checkForm()" style="text-align: center; color: #003557;">
                 <h3 style="text-align: center; color: #003557;"> Select Quantity and Size: </h3>
                 Size: <select id="size" name="size">
-                        <option value="5">5</option>
-                        <option value="5.5">5.5</option>
-                        <option value="6">6</option>
-                        <option value="6.5">6.5</option>
-                        <option value="7">7</option>
-                        <option value="7.5">7.5</option>
                         <option value="8">8</option>
                         <option value="8.5">8.5</option>
                         <option value="9">9</option>
                         <option value="9.5">9.5</option>
                         <option value="10">10</option>
+                        <option value="10.5">10.5</option>
+                        <option value="11">11</option>
+                        <option value="11.5">11.5</option>
+                        <option value="12">12</option>
+                        <option value="12.5">12.5</option>
+                        <option value="13">13</option>
+                        <option value="13.5">13.5</option>
                     </select>
                 Quantity: <select id="quantity" name="quantity">
                         <option value="1">1</option>
