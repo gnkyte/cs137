@@ -11,13 +11,15 @@ and open the template in the editor.
         <!--<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     </head>
-    <body>
+    <body id="mens-shoes">
+        
         <!-- navbar -->
         <div id="navbar-container">
             <nav class="main-navbar">
                 <ul id="menubar">
                     <li class="navbar-logo"><a href="index.html"><img src="img/logo.png" alt="logo"/></a></li>
                     <li ><a href="index.html">Home</a></li>
+                    <li><a href="all_shoe.html">All Shoes</a></li>
                     <li class="active"><a href="menshoes.html">Men's Shoes</a></li>
                     <li><a href="womenshoes.html">Women's Shoes</a></li>
                 </ul>
@@ -33,42 +35,45 @@ and open the template in the editor.
             </nav>
         </div>
         <!-- End navbar container --> 
-        </br>
-        </br>
-        <b><h1 align="center"><font color="black">Men's Shoes</font></h1></b>
-        </br>
-        </br>
-
-        <hr align="center" width="40%">
-
-        <div class="shoe-display">
-            <table align="center">
-                <tr>
-                    <td>
-                        <a href="shoe3.html">
-                            <img src="Pictures/shoes3.jpg" alt="Black Dress Shoes" height="300" width="300" style="margin: 10px"><p align="center">Black Dress Shoes<br>$27</p>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="shoe6.html">
-                            <img src="Pictures/shoes6.jpg" alt="Brown Dress Shoes" height="300" width="300" style="margin: 10px"><p align="center">Brown Dress Shoes<br>$90</p>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="shoe8.html">
-                            <img src="Pictures/shoes8.jpg" alt="Black Casual Dress Shoes" height="300" width="300" style="margin: 10px"><p align="center">Black Casual Dress Shoes<br>$14</p>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="shoe9.html">
-                            <img src="Pictures/shoes9.jpg" alt="Hiking Shoes" height="300" width="300" style="margin: 10px"><p align="center">Hiking Shoes<br>$14</p>
-                        </a>
-                    </td>
-                </tr>
-            </table>
+      <div id="product-index">
+            <div class="mens-shoes-index">
+                <h1>Men's Shoes</h1>
+                <hr class="separator">
+                <table id="mens-shoes-table">
+                    <tr colspan="3">
+                        <td>
+                            <a href="shoe3.html">
+                                <img class="product-img" src="Pictures/shoes3.jpg" alt="shoe 1"><br />
+                                <p>Black Dress Shoes</p>
+                                <p>$14</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="shoe6.html">
+                                <img class="product-img" src="Pictures/shoes6.jpg" alt="shoe 2"><br />
+                                <p>Brown Dress Shoes</p>
+                                <p>$45</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="shoe8.html">
+                                <img class="product-img" src="Pictures/shoes8.jpg" alt="shoe 4"><br />
+                                <p>Brown Casual Dress Shoes</p>
+                                <p>$300</p>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr colspan="3">
+                        <td>
+                            <a href="shoe9.html">
+                                <img class="product-img" src="Pictures/shoes9.jpg" alt="shoe 9"><br />
+                                <p>Hiking Shoes</p>
+                                <p>$14</p>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        </br>    
     </body>
 </html>

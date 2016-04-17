@@ -10,6 +10,22 @@ body {
     padding: 0;
 }
 
+#shoe-index {
+    background-image: url("img/slide5.jpg");
+    background-attachment: fixed;
+    background-position:bottom;
+}
+
+#womens-shoes {
+    background-image: url("img/slide4.jpg");
+    background-attachment: fixed;
+}
+
+#mens-shoes {
+    background-image: url("img/slide3.jpg");
+    background-attachment: fixed;
+}
+
 #navbar-container {
     margin: 0;
     background-color: #003557;
@@ -215,11 +231,12 @@ hr.separator {
 
 #product-index {
     margin-top: 3rem;
+    margin-bottom: 3rem;
     color: #000;
     text-align: center;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: #FFF;
+    background-color: rgba(255, 255, 255, 0.91);
 }
 
 #product-index a {
