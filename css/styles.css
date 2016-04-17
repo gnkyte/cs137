@@ -133,3 +133,23 @@ a:hover {
     height: 1.3rem;
     margin-top: .3rem;
 }
+
+p.shoePrice {
+    font-size: 20px;
+    color: #003557;
+}
+
+p.shoeDescription {
+    font-size: 16px;
+    color: #003557;
+}
+
+table.shoe {
+    align="center";
+    border=1;
+    width=800;
+}
+
+#shoe-display {
+    color: "black";
+}
