@@ -8,4 +8,4 @@
 * Gillian Bendicio
 * He Zhang
 * Shirley Zhu
-* Jefmark
+* Jefmark Lingad
